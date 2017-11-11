@@ -29,6 +29,7 @@ public class Basics {
 				body("results[0].place_id",equalTo("ChIJP3Sa8ziYEmsRUKgyFmh9AQM")).and().
 				header("Server","pablo");
 		
+		
 	}
 	
 	
