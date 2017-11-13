@@ -32,7 +32,7 @@ public class Basics6 {
 	@Test(enabled=false)
 	public void JiraAPICreateIssue() {
 		
-		//creating Issue/Defect  
+		//creating Issue/Defect 
 		
 		RestAssured.baseURI = prop.getProperty("JIRA_HOST");
 		
