@@ -29,7 +29,7 @@ public class Basics6 {
 		prop.load(fis);
 	}
 	
-	@Test
+	@Test(enabled=false)
 	public void JiraAPICreateIssue() {
 		
 		//creating Issue/Defect
