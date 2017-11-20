@@ -34,7 +34,7 @@ public class Basics7 {
 		prop.load(fis);
 	}
 	
-	@Test
+	@Test(enabled=false)
 	public void JiraAPICreateComment() {
 		
 		//Adding comment

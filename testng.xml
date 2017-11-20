@@ -13,4 +13,6 @@
       <class name="com.restassuredautomation.base.Basics"/>
     </classes>
   </test> <!-- REST API -->
+  <listeners>
+  </listeners>
 </suite> <!-- Suite -->

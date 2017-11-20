@@ -34,7 +34,7 @@ public class Basics8 {
 		prop.load(fis);
 	}
 	
-	@Test
+	@Test(enabled=false)
 	public void JiraAPIUpdateComment() {
 		
 		//Updating comment
