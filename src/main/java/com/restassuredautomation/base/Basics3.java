@@ -1,25 +1,28 @@
 package com.restassuredautomation.base;
 
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import files.PayLoad;
-import files.Resources;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import files.PayLoad;
+import files.Resources;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 public class Basics3 {
+	
+	private static Logger log = LogManager.getLogger(Basics3.class.getName());
 	
 	Properties prop = new Properties();
 	
@@ -37,6 +40,7 @@ public class Basics3 {
 	public void addAndDeletePlace() {
 		
 		//Task 1 - grab the response
+		log.info("Host information"+prop.getProperty("HOST"));
 		RestAssured.baseURI = prop.getProperty("HOST");
 		Response res = given().
 								queryParam("key", prop.getProperty("KEY")).
@@ -51,10 +55,10 @@ public class Basics3 {
 		//Task 2 - Grab the place ID from response
 		
 		String responseString = res.asString();
-		System.out.println(responseString);
+		log.info(responseString);
 		JsonPath js = new JsonPath(responseString);
 		String placeId = js.get("place_id");
-		System.out.println("Place ID = " +placeId);
+		log.info("Place ID = " +placeId);
 		
 		//Task 3 - Place this place ID in the Delete request
 		
