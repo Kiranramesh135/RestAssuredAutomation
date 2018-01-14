@@ -31,7 +31,7 @@ public class Basics5 {
 				assertThat().statusCode(200).and().contentType(ContentType.JSON).and().
 				body("results[0].name",equalTo("Sydney")).and().
 				body("results[0].place_id",equalTo("ChIJP3Sa8ziYEmsRUKgyFmh9AQM")).and().
-				header("Server","pablo").log().body().
+				header("Server","scaffolding on HTTPServer2").log().body().
 				extract().response();
 		JsonPath js = ReusableMethods.rawToJson(res);
 		int size = js.get("results.size()");

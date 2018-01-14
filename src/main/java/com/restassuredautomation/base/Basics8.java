@@ -16,6 +16,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -41,11 +42,18 @@ public class Basics8 {
 		
 		RestAssured.baseURI = prop.getProperty("JIRA_HOST");
 		
+//		RequestSpecBuilder builder = new RequestSpecBuilder();
+//		builder.addHeader("Content-Type","application/json");
+//		builder.addHeader("Cookie","JSESSIONID="+ReusableMethods.getSessionKey());
+//		builder.addPathParam("commentid", "10200");
+//		System.out.println(builder.toString());
+		
 		Response res =
 				given().
 								header("Content-Type","application/json").
 								header("Cookie","JSESSIONID="+ReusableMethods.getSessionKey()).
 								pathParams("commentid", "10200").
+//								spec(builder.build()).
 								body("{"+
 										"\"body\": \"Updating comment through rest assured automation\","+
 										"\"visibility\": {"+

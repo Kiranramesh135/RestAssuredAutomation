@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test name="REST API">
-    <classes>
-      <class name="com.restassuredautomation.base.Basics3"/>
-      <class name="com.restassuredautomation.base.Basics4"/>
-      <class name="com.restassuredautomation.base.Basics2"/>
-      <class name="com.restassuredautomation.base.Basics7"/>
-      <class name="com.restassuredautomation.base.Basics8"/>
-      <class name="com.restassuredautomation.base.Basics5"/>
-      <class name="com.restassuredautomation.base.Basics6"/>
-      <class name="com.restassuredautomation.base.Basics"/>
-    </classes>
-  </test> <!-- REST API -->
-  <listeners>
-  </listeners>
+	<listeners>
+		<listener class-name="resources.ExtentReporterNG"></listener>
+	</listeners>
+	<test name="REST API">
+		<classes>
+			<class name="com.restassuredautomation.base.Basics3" />
+			<class name="com.restassuredautomation.base.Basics4" />
+			<class name="com.restassuredautomation.base.Basics2" />
+			<class name="com.restassuredautomation.base.Basics7" />
+			<class name="com.restassuredautomation.base.Basics8" />
+			<class name="com.restassuredautomation.base.Basics5" />
+			<class name="com.restassuredautomation.base.Basics6" />
+			<class name="com.restassuredautomation.base.Basics" />
+		</classes>
+	</test> <!-- REST API -->
 </suite> <!-- Suite -->
