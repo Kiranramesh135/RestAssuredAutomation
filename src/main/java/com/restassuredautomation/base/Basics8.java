@@ -12,6 +12,8 @@ import files.PayLoad;
 import files.Resources;
 import files.ReusableMethods;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -21,7 +23,9 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class Basics8 {
+public class Basics8 extends BaseTestNG{
+	
+	private static Logger log = LogManager.getLogger(Basics8.class.getName());
 	
 	Properties prop = new Properties();
 	
@@ -69,7 +73,7 @@ public class Basics8 {
 		
 		JsonPath js = new JsonPath(response);
 		String id = js.get("id");
-		System.out.println(id);
+		log.info(id);
 								
 		
 		

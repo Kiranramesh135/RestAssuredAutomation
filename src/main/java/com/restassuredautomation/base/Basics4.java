@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
 import files.ReusableMethods;
@@ -14,7 +16,9 @@ import io.restassured.http.ContentType;
 import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
 
-public class Basics4 {
+public class Basics4 extends BaseTestNG{
+	
+	private static Logger log = LogManager.getLogger(Basics4.class.getName());
 	
 	@Test
 	public void addPlaceXML() throws IOException {
@@ -22,7 +26,7 @@ public class Basics4 {
 		RestAssured.baseURI = "https://maps.googleapis.com";
 		
 		String postData = generateStringFromResource(System.getProperty("user.dir")+"/src/main/resources/data/postdata.xml");
-		System.out.println(postData);
+		log.info(postData);
 		
 //		/RestAssuredAutomation/src/main/resources/data/postdata.xml
 		
@@ -37,7 +41,7 @@ public class Basics4 {
 				extract().response();
 		
 		XmlPath x = ReusableMethods.rawToXml(res);
-		System.out.println(x.get("PlaceAddResponse.place_id"));
+		log.info(x.get("PlaceAddResponse.place_id"));
 	}
 	
 	public static String generateStringFromResource(String path) throws IOException {

@@ -20,7 +20,7 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class Basics3 {
+public class Basics3 extends BaseTestNG{
 	
 	private static Logger log = LogManager.getLogger(Basics3.class.getName());
 	

@@ -7,6 +7,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -15,7 +17,9 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class Basics6 {
+public class Basics6 extends BaseTestNG{
+	
+	private static Logger log = LogManager.getLogger(Basics6.class.getName());
 	
 	Properties prop = new Properties();
 	
@@ -60,7 +64,7 @@ public class Basics6 {
 		
 		JsonPath js = new JsonPath(response);
 		String id = js.get("id");
-		System.out.println(id);
+		log.info(id);
 								
 		
 		

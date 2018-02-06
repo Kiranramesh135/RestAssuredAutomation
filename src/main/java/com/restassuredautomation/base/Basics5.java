@@ -11,7 +11,12 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class Basics5 {
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class Basics5 extends BaseTestNG{
+	
+	private static Logger log = LogManager.getLogger(Basics5.class.getName());
 	
 	@Test
 	public void extractingNamesAPI() {
@@ -35,11 +40,11 @@ public class Basics5 {
 				extract().response();
 		JsonPath js = ReusableMethods.rawToJson(res);
 		int size = js.get("results.size()");
-		System.out.println(size);
+		log.info(size);
 		
 		for(int i=0;i<size;i++) {
 			String place = js.get("results["+i+"].name");
-			System.out.println(place);
+			log.info(place);
 		}
 		
 	}
