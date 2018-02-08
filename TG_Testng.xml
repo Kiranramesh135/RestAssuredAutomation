@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="resources.ExtentReporterNG"></listener>
+	</listeners>
+	<test name="REST API">
+		<classes>
+			<class name="com.restassuredautomation.twitterapi.TwitterTest" />
+			<class name="com.restassuredautomation.googleapi.GoogleApiTest" />
+		</classes>
+	</test> <!-- REST API -->
+</suite> <!-- Suite -->
