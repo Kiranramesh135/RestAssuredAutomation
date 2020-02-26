@@ -2,7 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
-		<listener class-name="resources.ExtentReporterNG"></listener>
+		<listener class-name="resources.ExtentReporterNG"/>
+		<listener class-name="resources.TestListener"/>
 	</listeners>
 	<test name="REST API">
 		<classes>
